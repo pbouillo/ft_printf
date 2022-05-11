@@ -1,0 +1,7 @@
+*.md
+*.out
+*.o
+*.a
+settings.json
+extensions.json
+.DS_Store
