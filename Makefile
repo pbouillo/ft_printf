@@ -6,7 +6,7 @@
 #    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/05/11 13:46:06 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/05/11 13:51:46 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,11 @@ $(NAME):
 
 clean:
 	$(RM) $(OBJS) !$(NAME)
+	$(MAKE) -C $(LIBFTPATH) clean
 
 fclean:	clean
 	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFTPATH) fclean
 
 re:	fclean all
 

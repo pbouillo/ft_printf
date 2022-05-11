@@ -2,6 +2,7 @@
 *.out
 *.o
 *.a
+test*
 settings.json
 extensions.json
 .DS_Store
