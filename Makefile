@@ -6,7 +6,7 @@
 #    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/05/11 13:51:46 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/05/11 16:11:55 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,14 @@ CC 			= cc
 CFLAGS	 	= -Wall -Werror -Wextra
 RM 			= rm -rf
 LIBFTPATH 	= ./libft/
-LIBFTFLAGS 	= -Ilibft -Llibft
+LIBFTFLAGS 	= -Ilibft -Llibft -lft
 LIBFTA 		= libft/libft.a
 OBJS 		= $(SRCS:.c=.o)
 
 all: $(NAME)
+
+libfta:
+	$(MAKE) -C $(LIBFTPATH)
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRCS)

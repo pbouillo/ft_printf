@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:32:22 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/11 14:20:26 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:18:19 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
+
+int	ft_printf(const char *, ...);
 
 #endif
