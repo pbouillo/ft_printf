@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:32:22 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:19 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:54:54 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-int	ft_printf(const char *, ...);
+int		ft_printf(const char *, ...);
+char	*ft_strchr_perc(const char *s);
+
+
 
 #endif
