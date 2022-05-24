@@ -6,13 +6,13 @@
 #    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/05/19 15:17:01 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/05/24 14:03:01 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= libftprintf.a
 
-SRCS 		= ft_printf.c utils.c
+SRCS 		= ft_printf.c utils.c parse_arg.c
 
 
 CC 			= cc
