@@ -26,7 +26,7 @@ const char	*parse_arg(va_list ap, const char *format, t_print *print)
 	{
 		di = va_arg(ap, int);
 		ft_putnbr(di);
-		print->len += ft_intlen(di);
+		// print->len += ft_intlen(di);
 	}
 	else if (*format == 's')
 	{
@@ -44,6 +44,6 @@ const char	*parse_arg(va_list ap, const char *format, t_print *print)
 	}
 	else if (*format == 'x')
 	{
-		
+
 	}
 }

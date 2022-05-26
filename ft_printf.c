@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:31:06 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/24 15:08:21 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:16:34 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,3 @@
 // 	va_end(ap);
 // 	return (print.len);
 // }
-
-int	ft_puthexa(unsigned int nb, char *base)
-{
-	int	len;
-
-	len = 0;
-	
-}
