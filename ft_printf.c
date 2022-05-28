@@ -3,36 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:31:06 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/24 17:16:34 by pbouillo         ###   ########.fr       */
+/*   Created: 2022/05/28 16:02:44 by pbouillo          #+#    #+#             */
+/*   Updated: 2022/05/28 16:03:05 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-// int	ft_printf(const char *format, ...)
-// {
-// 	va_list	ap;
-// 	t_print	print;
+int	ft_arg_handl(va_list ap, const char *s, int i)
+{
+	int	len;
 
-// 	va_start(ap, format);
-// 	print.len = 0;
-// 	print.width = 0;
-// 	while (*format)
-// 	{
-// 		if (*format == '%')
-// 			format = search_arg(ap, format + 1, &print);
-// 		else
-// 			format = read_text(&print, format);
-// 		if (format == NULL)
-// 		{
-// 			ft_putstr("(null)");
-// 			va_end(ap);
-// 			return (print.len);
-// 		}
-// 	}
-// 	va_end(ap);
-// 	return (print.len);
-// }
+	len = 0;
+	if (s[i] == 'c')
+		len += ft_putchar_len(va_arg(ap, int));
+	if (s[i] == 's')
+		len += ft_putstr_len(va_arg(ap, char *));
+	if (s[i] == 'd' || s[i] == 'i')
+		len += ft_putnbr_len(va_arg(ap, int));
+	if (s[i] == 'u')
+		len += ft_put_uint(va_arg(ap, unsigned int));
+	if (s[i] == 'x')
+		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789abcdef");
+	if (s[i] == 'X')
+		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789ABCDEF");
+	if (s[i] == 'p')
+	{
+		len += ft_putp(va_arg(ap, unsigned long long));
+	}
+	if (s[i] == '%')
+		len += ft_putchar_len('%');
+	return (len);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	int		i;
+	int		len;
+	va_list	ap;
+
+	i = 0;
+	len = 0;
+	va_start(ap, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			len += ft_arg_handl(ap, format, i + 1);
+			i++;
+			i++;
+			continue ;
+		}
+		else
+			len += ft_putchar_len(format[i]);
+		i++;
+	}
+	va_end(ap);
+	return (len);
+}
