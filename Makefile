@@ -6,7 +6,7 @@
 #    By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/05/28 16:18:26 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/05/28 17:35:27 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,23 +16,23 @@ SRCS 		= 	ft_printf.c ft_print_chars.c ft_print_hexa.c \
 				ft_print_numbers.c ft_print_ptr.c
 
 
-CC 			= 	cc
-CFLAGS	 	= 	-Wall -Werror -Wextra
-RM 			= 	rm -rf
-OBJS 		=	 $(SRCS:.c=.o)
+CC 			=	cc
+CFLAGS	 	=	-Wall -Werror -Wextra
+RM 			=	rm -rf
+OBJS 		=	$(SRCS:.c=.o)
 
-all: $(NAME)
+all: 			$(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRCS)
-	ar -rcs $(NAME) $(OBJS)
+				$(CC) $(CFLAGS) -c $(SRCS)
+				ar -rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) !$(NAME)
+				$(RM) $(OBJS) !$(NAME)
 
-fclean:	clean
-	$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re:	fclean all
+re:				fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: 		all clean fclean re
