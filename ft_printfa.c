@@ -60,11 +60,6 @@ int	ft_put_uint(unsigned int n)
 	int	len;
 
 	len = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		len += ft_putchar_len('-');
-	}
 	if (n >= 10)
 	{
 		len += ft_putnbr_len(n / 10);
@@ -97,6 +92,19 @@ int	ft_puthexa_up(unsigned int nb, char *base)
 	return (len);
 }
 
+int	ft_putp(void *p, char *base)
+{
+	int					len;
+	unsigned long long	ptr;
+
+	ptr = (unsigned long long)p;
+	len = 0;
+	if (ptr > 15)
+		len += ft_putp(ptr / 16, base);
+	len += ft_putchar_len(base[ptr % 16]);
+	return (len);
+}
+
 int	ft_arg_handl(va_list ap, const char *s, int i)
 {
 	int	len;
@@ -116,8 +124,7 @@ int	ft_arg_handl(va_list ap, const char *s, int i)
 		len += ft_puthexa_up(va_arg(ap, unsigned int), "0123456789ABCDEF");
 	if (s[i] == 'p')
 	{
-		// len += ft_putstr_len("0x");
-		len += ft_puthexa(va_arg(ap, unsigned long), "0123456789abcdef");
+		len += ft_putp(va_arg(ap, void *), "0123456789abcdef");
 	}
 	if (s[i] == '%')
 		len += ft_putchar_len('%');
@@ -135,11 +142,6 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	while (format[i])
 	{
-		if (format == NULL)
-		{
-			va_end(ap);
-			return (len);
-		}
 		if (format[i] == '%')
 		{
 			len += ft_arg_handl(ap, format, i + 1);
@@ -155,11 +157,59 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-int	main (void)
+int	main(void)
 {
-	void	*p = "reire";
-	ft_printf("%p",p);
-	ft_printf("\n");
-	printf("%p", p);
-	return (0);
+	char *testpointer = NULL;
+	char *emptystring = "";
+	int int1 = 0;
+	int int2 = 0;
+	int int3 = -0;
+	int int4 = 0;
+	int ml = ft_printf("Testtesttes! %%%%%%%%%%%%%%%% %% %d %d %s %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", int1, int2, "TEST ME", int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
+	int pl = printf("Testtesttes! %%%%%%%%%%%%%%%% %% %d %d %s %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", int1, int2, "TEST ME", int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
+	int ml2 = ft_printf("A %% AAA %d\n", 0);
+	int pl2 = printf("A %% AAA %d\n", 0);
+	int ml3 = ft_printf("");
+	int pl3 = printf("");
+	int ml4 = ft_printf("aa\n");
+	int pl4 = printf("aa\n");
+	int ml5 = ft_printf("%%\n");
+	int pl5 = printf("%%\n");
+	int ml6 = ft_printf("%% A %% A %% \n");
+	int pl6 = printf("%% A %% A %% \n");
+	int ml7 = ft_printf("!!%d %%\n", -2147483647);
+	int pl7 = printf("!!%d %%\n", -2147483647);
+	int ml8 = ft_printf("!!%d %% %s \n", -123123, emptystring);
+	int pl8 = printf("!!%d %% %s \n", -123123, emptystring);
+	int ml9 = ft_printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
+	int pl9 = printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml);
+	printf("____PRINTFLENGTH: %d\n", pl);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml2);
+	printf("____PRINTFLENGTH: %d\n", pl2);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml3);
+	printf("____PRINTFLENGTH: %d\n", pl3);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml4);
+	printf("____PRINTFLENGTH: %d\n", pl4);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml5);
+	printf("____PRINTFLENGTH: %d\n", pl5);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml6);
+	printf("____PRINTFLENGTH: %d\n", pl6);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml7);
+	printf("____PRINTFLENGTH: %d\n", pl7);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml8);
+	printf("____PRINTFLENGTH: %d\n", pl8);
+	printf("================\n");
+	printf("my__PRINTFLENGTH: %d\n", ml9);
+	printf("____PRINTFLENGTH: %d\n", pl9);
+	system("leaks a.out");
+	return 0;
 }
