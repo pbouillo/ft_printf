@@ -3,17 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+         #
+#    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/06/01 14:15:06 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/06/04 20:24:23 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libftprintf.a
 
-SRCS 		= 	ft_printf.c ft_print_chars.c ft_print_hexa.c \
-				ft_print_numbers.c ft_print_ptr.c
+SRCS 		= 	$(wildcard ./*c)
 
 
 CC 			=	cc
