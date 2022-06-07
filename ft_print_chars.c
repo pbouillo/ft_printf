@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_chars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:01:45 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/28 16:01:53 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:27:22 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar_len(char c)
 {

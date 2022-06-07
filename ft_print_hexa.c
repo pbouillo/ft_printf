@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:59:25 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/28 16:00:30 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:27:17 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_puthexa(unsigned int nb, char *base)
 {

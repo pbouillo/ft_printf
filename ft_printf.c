@@ -6,11 +6,11 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:02:44 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 12:58:25 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:26:59 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_arg_handl(va_list ap, const char *s, int i)
 {

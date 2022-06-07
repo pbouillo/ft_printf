@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:59:07 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/01 14:05:08 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:27:11 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_len(int n)
 {

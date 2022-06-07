@@ -6,11 +6,11 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:00:49 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 12:58:31 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:27:05 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	conv_ptr(unsigned long long ptr)
 {
