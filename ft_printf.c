@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:02:44 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 17:57:44 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:01:22 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	ft_arg_handl(va_list ap, const char *s, int i)
 	if (s[i] == 'd' || s[i] == 'i')
 		len += ft_putnbr_len(va_arg(ap, int));
 	if (s[i] == 'u')
-		len += ft_put_uint_len(va_arg(ap, unsigned int));
+		len += ft_putuint_len(va_arg(ap, unsigned int));
 	if (s[i] == 'x')
 		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789abcdef");
 	if (s[i] == 'X')
 		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789ABCDEF");
 	if (s[i] == 'p')
-		len += ft_putp(va_arg(ap, unsigned long long));
+		len += ft_putptr(va_arg(ap, unsigned long long));
 	if (s[i] == '%')
 		len += ft_putchar_len('%');
 	return (len);
