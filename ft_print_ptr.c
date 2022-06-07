@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:00:49 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/05/28 17:14:55 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:58:31 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_putp(unsigned long long ptr)
 	int	len;
 
 	len = 0;
-	len += write(1, &"0x", 2);
+	len += write(1, "0x", 2);
 	if (ptr == 0)
 		len += write(1, "0", 1);
 	else

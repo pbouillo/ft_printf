@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbouillo <pbouillo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:02:44 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/01 14:06:02 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:58:25 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ int	ft_arg_handl(va_list ap, const char *s, int i)
 	if (s[i] == 'X')
 		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789ABCDEF");
 	if (s[i] == 'p')
-	{
 		len += ft_putp(va_arg(ap, unsigned long long));
-	}
 	if (s[i] == '%')
 		len += ft_putchar_len('%');
 	return (len);
