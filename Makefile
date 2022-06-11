@@ -6,13 +6,14 @@
 #    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/06/07 17:57:29 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/06/11 11:00:15 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libftprintf.a
 
-SRCS 		= 	$(wildcard ./*c)
+SRCS 		= 	ft_print_chars.c ft_print_hexa.c ft_print_numbers.c \
+				ft_print_ptr.c ft_printf.c
 
 
 CC 			=	cc
