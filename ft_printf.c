@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:02:44 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 18:01:22 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/11 10:30:23 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	ft_arg_handl(va_list ap, const char *s, int i)
 	if (s[i] == 'u')
 		len += ft_putuint_len(va_arg(ap, unsigned int));
 	if (s[i] == 'x')
-		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789abcdef");
+		len += ft_puthexa(va_arg(ap, int), "0123456789abcdef");
 	if (s[i] == 'X')
-		len += ft_puthexa(va_arg(ap, unsigned int), "0123456789ABCDEF");
+		len += ft_puthexa(va_arg(ap, int), "0123456789ABCDEF");
 	if (s[i] == 'p')
-		len += ft_putptr(va_arg(ap, unsigned long long));
+		len += ft_putptr((long) va_arg(ap, void *));
 	if (s[i] == '%')
 		len += ft_putchar_len('%');
 	return (len);
@@ -42,6 +42,8 @@ int	ft_printf(const char *format, ...)
 	int		len;
 	va_list	ap;
 
+	if (format == 0)
+		return (0);
 	i = 0;
 	len = 0;
 	va_start(ap, format);

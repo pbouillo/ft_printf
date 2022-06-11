@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:00:49 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 18:01:26 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/11 10:32:22 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	conv_ptr(unsigned long long ptr)
 	return (len);
 }
 
-int	ft_putptr(unsigned long long ptr)
+int	ft_putptr(long ptr)
 {
 	int	len;
 
