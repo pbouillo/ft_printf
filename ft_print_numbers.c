@@ -6,7 +6,7 @@
 /*   By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 15:59:07 by pbouillo          #+#    #+#             */
-/*   Updated: 2022/06/07 18:01:36 by pbouillo         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:56:08 by pbouillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ int	ft_putnbr_len(int n)
 	return (len);
 }
 
-int	ft_putuint_len(unsigned int n)
+int	ft_putunbr_len(unsigned int n)
 {
 	int	len;
 
 	len = 0;
 	if (n >= 10)
 	{
-		len += ft_putuint_len(n / 10);
-		len += ft_putuint_len(n % 10);
+		len += ft_putunbr_len(n / 10);
+		len += ft_putunbr_len(n % 10);
 	}
 	else
 		len += ft_putchar_len(n + '0');
