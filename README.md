@@ -1,4 +1,4 @@
-# 42_ft_printf
+# ft_printf
 Basic implementation of printf
 
 ```cspdiuxX%``` conversions handled
