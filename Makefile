@@ -6,13 +6,13 @@
 #    By: pbouillo <pbouillo@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/11 13:32:18 by pbouillo          #+#    #+#              #
-#    Updated: 2022/06/11 14:46:45 by pbouillo         ###   ########.fr        #
+#    Updated: 2022/12/22 11:49:31 by pbouillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	libftprintf.a
 
-SRCS 		= 	ft_print_chars.c ft_print_hexa.c ft_print_numbers.c \
+SRCS 		= 	ft_printf_utils.c ft_printf_utils2.c \
 				ft_printf.c
 
 
